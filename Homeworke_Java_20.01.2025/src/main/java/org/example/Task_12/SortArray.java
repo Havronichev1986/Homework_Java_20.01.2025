@@ -3,6 +3,7 @@ package org.example.Task_12;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Random;
+import java.util.Scanner;
 import java.util.stream.Stream;
 
 public class SortArray {
@@ -12,12 +13,23 @@ public class SortArray {
     public static void main(String[] args) {
 
         Integer[] ar = RandomArray();
-        Stream<Integer> SortAscending = newArraySortAscending(ar);
-        Stream<Integer> SortDescending = newArraySortDescending(ar);
-
         System.out.printf("\nОригинальный массив: " + Arrays.toString(ar));
-        System.out.printf("\nСортировка по возростанию: " + Arrays.toString(SortAscending.toArray()));
-        System.out.printf("\nСортировка по убыванию: " + Arrays.toString(SortDescending.toArray()) + "\n");
+
+        System.out.printf("\nДдя сортировки массива по возростанию нажмите - 1 ....");
+        System.out.printf("\nДдя сортировки массива по убыванию нажмите - 2 ....");
+
+        Scanner scanner = new Scanner(System.in);
+        int i = scanner.nextInt();
+        switch (i){
+            case 1:
+                Stream<Integer> SortAscending = newArraySortAscending(ar);
+                System.out.printf("\nСортировка по возростанию: " + Arrays.toString(SortAscending.toArray()));
+                break;
+            case 2:
+                Stream<Integer> SortDescending = newArraySortDescending(ar);
+                System.out.printf("\nСортировка по убыванию: " + Arrays.toString(SortDescending.toArray()) + "\n");
+                break;
+        }
     }
 
     public static Integer[] RandomArray() {

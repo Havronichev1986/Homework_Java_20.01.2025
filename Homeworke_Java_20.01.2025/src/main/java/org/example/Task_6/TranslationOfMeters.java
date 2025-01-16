@@ -9,9 +9,9 @@ public class TranslationOfMeters {
         System.out.printf("Введите колличество метров: ");
         double i = scanner.nextLong();
 
-        System.out.printf("Перевести в мили нажмите  - 1\n" +
-                "Перевести в дюймы нажмите - 2\n" +
-                "Перевести в ярды нажмите  - 3\n");
+        System.out.printf("Перевести в мили нажмите:   1\n" +
+                "Перевести в дюймы нажмите:  2\n" +
+                "Перевести в ярды нажмите:   3\n");
         int y = scanner.nextInt();
 
         method(i,y);
@@ -23,15 +23,15 @@ public class TranslationOfMeters {
             case 1:
                 double result = i/1609.34;
                 String output = String.format("%.8f", result); // 8 знаков после точки
-                System.out.printf(i + "  метров в милях будет равно " + output);
+                System.out.printf(i + " метров = " + output + " миля");
                 break;
             case 2:
-                System.out.printf(i + "  метров в дюймах будет равно " + i * 39.37);
+                System.out.printf(i + " метров = " + i * 39.37 + " дюймов");
                 break;
             case 3:
                 double result1 = i*1.09361;
                 String output1 = String.format("%.5f", result1); // 8 знаков после точки
-                System.out.printf(i + "  метров в милях будет равно " + output1);
+                System.out.printf(i + " метров = " + output1 + " яродов");
                 break;
 
         }
